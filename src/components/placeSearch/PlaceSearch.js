@@ -1,6 +1,5 @@
 import React, { useEffect, useState }  from 'react';
 import {getWeatherData} from '../../getWeatherData.js';
-const apiKey = require("../../apiKey");
 
 export const PlaceSearch = () => {
   const [weatherData, setWeatherData] = useState("");
