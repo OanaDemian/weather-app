@@ -1,9 +1,8 @@
 export const getWeatherData = async (cityName) => {
     const apiKey = process.env.REACT_APP_WEATHER_API_KEY
-    console.log(apiKey)
     try {
         const response = await fetch(
-            `http://api.openweathermap.org/data/2.5/weather?units=metric&q=${cityName}&appid=${apiKey}`,
+            `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${cityName}&appid=${apiKey}`,
             { 
                 method: "GET",
                 headers: {}
