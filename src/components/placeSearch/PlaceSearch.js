@@ -11,9 +11,8 @@ export const PlaceSearch = () => {
 
   const fetchTemperature = async () => {
     if (place) {
-    const fetchWeatherData = await getWeatherData(place);
-    const temperature = await fetchWeatherData;
-    setWeatherData(`Current temperature for ${place} is ${temperature.main.temp}˚C`);
+      const newWeatherData = await getWeatherData(place);
+      setWeatherData(`Current temperature for ${place} is ${newWeatherData.main.temp}˚C`);
     }
   };
 
