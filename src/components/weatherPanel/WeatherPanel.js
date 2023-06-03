@@ -1,23 +1,9 @@
-import React, { useEffect, useState }  from 'react';
-import {getWeatherData} from '../../getWeatherData.js';
-
-export const WeatherPanel = (place) => {
-  const [weatherData, setWeatherData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (place) {
-        const newWeatherData = await getWeatherData(place);
-        setWeatherData(`Current temperature for ${newWeatherData.place} is ${newWeatherData.temperature}˚C`);
-      }
-    };
-    fetchData() 
-      .catch(console.error);  
-  }, []);
-
+import React  from 'react';
+export const WeatherPanel = ({weatherData}) => {
   return (
   <div>
-    <h2>{ weatherData }</h2>
+    <h2>Location: {weatherData.place}</h2>
+    <p>Current temperature: {weatherData.temperature}</p>
   </div>
   )
 }
